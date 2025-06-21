@@ -1,0 +1,36 @@
+ext {
+
+
+    androidID = [
+            compileSdk               : 35,
+            applicationId: "com.zhang.reader",
+            minSdk                   : 24,
+            targetSdk                : 35,
+            versionCode              : 1,
+            versionName              : "1.0",
+            testInstrumentationRunner: "androidx.test.runner.AndroidJUnitRunner",
+
+    ]
+
+    appID=[
+            appId:"com.zhang.reader",
+    ]
+
+    dependenciseID=[
+
+            "androidx_core_ktx": libs.androidx.core.ktx,
+            "appcompat": libs.androidx.appcompat,
+            "material": libs.material,
+            "activity": libs.androidx.activity,
+            "constraintlayout": libs.androidx.constraintlayout,
+
+//            implementation libs.androidx.appcompat
+//            implementation libs.material
+//            implementation libs.androidx.activity
+//            implementation libs.androidx.constraintlayout
+//            testImplementation libs.junit
+//            androidTestImplementation libs.androidx.junit
+//            androidTestImplementation libs.androidx.espresso.core
+    ]
+
+}

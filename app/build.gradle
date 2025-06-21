@@ -1,0 +1,47 @@
+plugins {
+    alias(libs.plugins.android.application)
+    alias(libs.plugins.kotlin.android)
+}
+
+
+def androidID = rootProject.ext.androidID
+
+android {
+    namespace 'com.zhang.reader'
+    compileSdk androidID.compileSdk
+
+    defaultConfig {
+        applicationId appID.appId
+        minSdk androidID.minSdk
+        targetSdk androidID.targetSdk
+        versionCode androidID.versionCode
+        versionName androidID.versionName
+
+
+    }
+    buildFeatures {
+        buildConfig true
+    }
+    buildTypes {
+        release {
+
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            rootProject.ext.isRelease = false
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
+    }
+    kotlinOptions {
+        jvmTarget = '11'
+    }
+}
+
+dependencies {
+dependenciseID.each {k,v->implementation v}
+
+}
