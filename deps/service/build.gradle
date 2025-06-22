@@ -1,12 +1,10 @@
 plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.android)
-    id('kotlin-kapt')
 }
 
-def androidID = rootProject.ext.androidID
 android {
-    namespace 'com.zhang.user'
+    namespace 'com.zhang.service'
     compileSdk androidID.compileSdk
 
     defaultConfig {
@@ -25,16 +23,10 @@ android {
         targetCompatibility rootProject.ext.androidID.targetCompatibility
     }
     kotlinOptions {
-        jvmTarget = '17'
+        jvmTarget = "17"
     }
 }
-kapt {
-    arguments {
-        arg("AROUTER_MODULE_NAME", project.name)
-    }
-}
+
 dependencies {
-    api(project(":infra:common"))
-    api(project(":infra:router_center"))
-    kapt dependenciseID['arouter-compiler']
+    implementation libs.androidx.core.ktx
 }

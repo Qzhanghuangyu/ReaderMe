@@ -1,35 +1,22 @@
 plugins {
-    alias(libs.plugins.android.application)
+    alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.android)
-    id 'kotlin-kapt'
+    id('kotlin-kapt')
 }
 
-def androidID = rootProject.ext.androidID
-
 android {
-    namespace 'com.zhang.reader'
+    namespace 'com.zhang.post'
     compileSdk androidID.compileSdk
 
     defaultConfig {
-        applicationId appID.appId
         minSdk androidID.minSdk
-        targetSdk androidID.targetSdk
-        versionCode androidID.versionCode
-        versionName androidID.versionName
-
-
+        consumerProguardFiles "consumer-rules.pro"
     }
-    buildFeatures {
-        buildConfig true
-    }
+
     buildTypes {
         release {
-
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-        }
-        debug {
-            rootProject.ext.isRelease = false
         }
     }
     compileOptions {
@@ -40,15 +27,15 @@ android {
         jvmTarget = '17'
     }
 }
+
 kapt {
     arguments {
         arg("AROUTER_MODULE_NAME", project.name)
     }
 }
 dependencies {
-    implementation project(":user")
-    implementation project(":post")
-    implementation project(":infra:common")
+    api(project(":infra:common"))
+
     api(project(":infra:router_center"))
     kapt dependenciseID['arouter-compiler']
 }

@@ -11,6 +11,13 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/deps" />
+            <option value="$PROJECT_DIR$/deps/service" />
+            <option value="$PROJECT_DIR$/infra" />
+            <option value="$PROJECT_DIR$/infra/common" />
+            <option value="$PROJECT_DIR$/infra/router_center" />
+            <option value="$PROJECT_DIR$/news" />
+            <option value="$PROJECT_DIR$/post" />
             <option value="$PROJECT_DIR$/user" />
           </set>
         </option>

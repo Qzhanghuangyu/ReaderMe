@@ -22,3 +22,8 @@ dependencyResolutionManagement {
 rootProject.name = "MyProject"
 include ':app'
 include ':user'
+include ':post'
+include ':infra:common'
+include ':infra:router_center'
+include ':deps:service'
+include ':news'

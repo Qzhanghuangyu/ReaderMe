@@ -1,6 +1,6 @@
 ext {
 
-
+    def javaTarget ="17"
     androidID = [
             compileSdk               : 35,
             applicationId: "com.zhang.reader",
@@ -8,7 +8,8 @@ ext {
             targetSdk                : 35,
             versionCode              : 1,
             versionName              : "1.0",
-            testInstrumentationRunner: "androidx.test.runner.AndroidJUnitRunner",
+            sourceCompatibility :JavaVersion.VERSION_17,
+            targetCompatibility :JavaVersion.VERSION_17,
 
     ]
 
@@ -18,11 +19,6 @@ ext {
 
     dependenciseID=[
 
-            "androidx_core_ktx": libs.androidx.core.ktx,
-            "appcompat": libs.androidx.appcompat,
-            "material": libs.material,
-            "activity": libs.androidx.activity,
-            "constraintlayout": libs.androidx.constraintlayout,
             "arouter-api":"com.alibaba:arouter-api:1.5.2",
             "arouter-compiler":"com.alibaba:arouter-compiler:1.5.2",
 //            implementation ()

@@ -17,6 +17,6 @@ class MainActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-        ARouter.getInstance().build("/user/activity").navigation();
+        ARouter.getInstance().build("/post/activity").navigation();
     }
 }
