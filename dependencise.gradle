@@ -21,6 +21,11 @@ ext {
 
             "arouter-api":"com.alibaba:arouter-api:1.5.2",
             "arouter-compiler":"com.alibaba:arouter-compiler:1.5.2",
+            "gson":"com.google.code.gson:gson:2.10.1",
+            "okhttp":"com.squareup.okhttp3:okhttp:4.12.0",
+            "logging-interceptor":"com.squareup.okhttp3:logging-interceptor:4.12.0",
+            "diagnose":"com.tencent.tdos-diagnose:diagnose:0.4.11",
+            "diagnoseLog":"com.tencent.tdos-diagnose:logger:0.4.11",
 //            implementation ()
 //            kapt 'com.alibaba:arouter-compiler:1.5.2'
 //            implementation libs.androidx.appcompat
@@ -30,6 +35,8 @@ ext {
 //            testImplementation libs.junit
 //            androidTestImplementation libs.androidx.junit
 //            androidTestImplementation libs.androidx.espresso.core
+
+//            String gson = "com.google.code.gson:gson:2.10.1";
     ]
 
 }

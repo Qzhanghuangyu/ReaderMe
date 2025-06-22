@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    namespace 'com.zhang.common'
+    namespace 'com.zhang.log'
     compileSdk androidID.compileSdk
 
     defaultConfig {
@@ -29,11 +29,15 @@ android {
 }
 
 dependencies {
-    api libs.androidx.core.ktx
-    api libs.androidx.appcompat
-    api libs.androidx.constraintlayout
-    api libs.material
-    api libs.androidx.activity
-    api(project(':deps:service'))
-    api(project(':infra:log'))
+    implementation libs.androidx.core.ktx
+    implementation libs.androidx.appcompat
+    implementation libs.material
+
+    implementation dependenciseID['gson']
+    implementation dependenciseID['okhttp']
+    implementation dependenciseID['logging-interceptor']
+    implementation dependenciseID['diagnose']
+    implementation dependenciseID['diagnoseLog']
+//    implementation 'com.tencent.bugly:crashreport:latest.release'
+
 }

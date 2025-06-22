@@ -7,6 +7,7 @@ pluginManagement {
                 includeGroupByRegex("androidx.*")
             }
         }
+        maven { url 'https://repo1.maven.org/maven2/' }
         mavenCentral()
         gradlePluginPortal()
     }
@@ -15,6 +16,7 @@ dependencyResolutionManagement {
     repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
     repositories {
         google()
+        maven { url 'https://repo1.maven.org/maven2/' }
         mavenCentral()
     }
 }
@@ -27,3 +29,4 @@ include ':infra:common'
 include ':infra:router_center'
 include ':deps:service'
 include ':news'
+include ':infra:log'
