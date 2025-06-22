@@ -23,7 +23,10 @@ ext {
             "material": libs.material,
             "activity": libs.androidx.activity,
             "constraintlayout": libs.androidx.constraintlayout,
-
+            "arouter-api":"com.alibaba:arouter-api:1.5.2",
+            "arouter-compiler":"com.alibaba:arouter-compiler:1.5.2",
+//            implementation ()
+//            kapt 'com.alibaba:arouter-compiler:1.5.2'
 //            implementation libs.androidx.appcompat
 //            implementation libs.material
 //            implementation libs.androidx.activity

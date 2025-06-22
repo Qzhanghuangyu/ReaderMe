@@ -1,8 +1,8 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
+    id 'kotlin-kapt'
 }
-
 
 def androidID = rootProject.ext.androidID
 
@@ -40,8 +40,18 @@ android {
         jvmTarget = '11'
     }
 }
-
+kapt {
+    arguments {
+        arg("AROUTER_MODULE_NAME", project.name)
+    }
+}
 dependencies {
-dependenciseID.each {k,v->implementation v}
-
+//dependenciseID.each {k,v->implementation v}
+    implementation(dependenciseID.androidx_core_ktx)
+    implementation(dependenciseID.appcompat)
+    implementation(dependenciseID.material)
+    implementation(dependenciseID.activity)
+    implementation(dependenciseID.constraintlayout)
+    kapt 'com.alibaba:arouter-compiler:1.5.2'
+    implementation project(":user")
 }
