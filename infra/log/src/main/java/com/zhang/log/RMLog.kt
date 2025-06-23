@@ -16,7 +16,7 @@ import java.util.concurrent.ThreadLocalRandom
  * e：级别最低，用于打印详细的频繁的日志，般用于上线阶段
  *上线阶段可以看到的日志用i级别以上的日志
  */
-object HYLog {
+object RMLog {
     private val logList = mutableListOf<TDLogInfo>()
     private var isInit = false
     private var showExtMsg = true // 是否带上类名，方法，行号
@@ -258,12 +258,12 @@ value class Logger(val tag: String) {
      */
     inline fun d(throwable: Throwable? = null, msg: () -> String) {
         if (enableVd) {
-            HYLog.d(tag, msg(), throwable)
+            RMLog.d(tag, msg(), throwable)
         }
     }
 
     inline fun i(throwable: Throwable? = null, msg: () -> String) {
-        HYLog.i(tag, msg(), throwable)
+        RMLog.i(tag, msg(), throwable)
     }
 
     /**
@@ -279,11 +279,11 @@ value class Logger(val tag: String) {
     }
 
     inline fun w(throwable: Throwable? = null, msg: () -> String) {
-        HYLog.w(tag, msg(), throwable)
+        RMLog.w(tag, msg(), throwable)
     }
 
     inline fun e(throwable: Throwable? = null, msg: () -> String) {
-        HYLog.e(tag, msg(), throwable)
+        RMLog.e(tag, msg(), throwable)
     }
 
     inline fun ifVerbose(msg: () -> String): String {

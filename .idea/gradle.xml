@@ -16,6 +16,7 @@
             <option value="$PROJECT_DIR$/infra" />
             <option value="$PROJECT_DIR$/infra/common" />
             <option value="$PROJECT_DIR$/infra/log" />
+            <option value="$PROJECT_DIR$/infra/network" />
             <option value="$PROJECT_DIR$/infra/router_center" />
             <option value="$PROJECT_DIR$/news" />
             <option value="$PROJECT_DIR$/post" />

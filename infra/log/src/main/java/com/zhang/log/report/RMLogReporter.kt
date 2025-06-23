@@ -1,7 +1,7 @@
 package com.zhang.log.report
 
 import com.google.gson.Gson
-import com.zhang.log.HYLog
+import com.zhang.log.RMLog
 import com.zhang.log.report.bean.LogContentData
 import com.zhang.log.report.bean.LogReportData
 import com.zhang.log.report.bean.LogReportRequest
@@ -44,7 +44,7 @@ object RMLogReporter {
 
     private val coroutineContext: CoroutineContext = Dispatchers.IO + SupervisorJob() +
             CoroutineExceptionHandler { _, e ->
-                HYLog.w(TAG, "reportLog error: $e", e)
+                RMLog.w(TAG, "reportLog error: $e", e)
             }
 
     fun reportLog(level: String, content: String, traceId: String?) {
@@ -56,7 +56,7 @@ object RMLogReporter {
             val logReportData = LogReportData(level, gson.toJson(contentData))
             logDataList.add(logReportData)
             if (logDataList.size >= MAX_LOG_DATA_BATCH_SIZE) {
-                HYLog.d(TAG, "execute reportLog size: ${logDataList.size}")
+                RMLog.d(TAG, "execute reportLog size: ${logDataList.size}")
                 reportLog(gson.toJson(LogReportRequest(MONITOR_LOG_TPOIC, logDataList)))
                 logDataList.clear()
             }
@@ -72,9 +72,9 @@ object RMLogReporter {
                 "ts" to ts.toString(),
                 "sign" to sign
             )
-            HYLog.d(TAG, "reportLog: $headers, body string: $body")
+            RMLog.d(TAG, "reportLog: $headers, body string: $body")
             val ret = executeBean(url = MONITOR_LOG_URL, headers = headers, body = body)
-            HYLog.d(TAG, "reportLog result: ${ret.isSuccessful}, ret: ${ret.code}, ${ret.message}")
+            RMLog.d(TAG, "reportLog result: ${ret.isSuccessful}, ret: ${ret.code}, ${ret.message}")
         }
     }
 
