@@ -36,4 +36,5 @@ dependencies {
     api libs.androidx.activity
     api(project(':deps:service'))
     api(project(':infra:log'))
+    api(project(':infra:network'))
 }
